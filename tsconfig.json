@@ -2,12 +2,13 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
+    "types": ["node"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "isolatedModules" : true,
-    "strict": true,
+    "isolatedModules": true,
+    "strict": true
   },
 
   "references": [
