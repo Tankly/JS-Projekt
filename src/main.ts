@@ -6,4 +6,9 @@ import { loadFonts } from '@/plugins/webfontloader'
 import { createPinia } from 'pinia'
 loadFonts()
 
-createApp(App).use(router).use(vuetify).use(createPinia()).mount('#app')
+const app = createApp(App)
+
+app.use(router)
+app.use(vuetify)
+app.use(createPinia())
+app.mount('#app')
