@@ -1,0 +1,55 @@
+// $primary: var(--v-primary-base);
+// $primary-light: var(--v-primaryLight-base);
+// $secondary: var(--v-secondary-base);
+// $secondary-dark: var(--v-secondaryDark-base);
+// $accent: var(--v-accent-base);
+// $muted: var(--v-muted-base);
+// $muted-second: var(--v-mutedSecond-base);
+// $muted-light: var(--v-mutedLight-base);
+// $accent-light: var(--v-accentLight-base);
+// $accent-lighter: var(--v-accentLighter-base);
+// $chip-text: var(--v-chipText-base);
+// $btn-primary: var(--v-btnColor-base);
+// $btn-background-light: var(--v-backgroundLight-base);
+// $elevation-st: var(--v-elevationSt-base);
+// $info: var(--v-info-base);
+// $warning: var(--v-warning-base);
+// $error: var(--v-error-base);
+// $success: var(--v-success-base);
+// $background: var(--v-background-base);
+// $grey-background: var(--v-grey-background-base);
+// $white: white;
+:root {
+  --font_size--xxxxl: 4rem;
+  --font_size--xxxl: 3rem;
+  --font_size--xxl: 2rem;
+  --font_size--xl: 1.25rem; //18px
+  --font_size: 1rem; // 16px
+  --font_size--xs: 0.875rem; //14px
+  --font_size--xxs: 0.8rem; // 12.8px
+
+  --line-height--xxl: 2rem;
+  --line-height--xl: 1.25rem; //18px
+  --line-height: 1rem; // 16px
+  --line-height--xs: 0.875rem; //14px
+  --line-height--xxs: 0.8rem; // 12.8px
+
+  --gap--xxl: 2rem;
+  --gap--xl: 1.25rem; //18px
+  --gap: 1rem; // 16px
+  --gap--xs: 0.875rem; //14px
+  --gap--xxs: 0.8rem; // 12.8px
+  --gap--xxxs: 0.5rem;
+
+  --text-bold: 700;
+  --text-normal: 400;
+  --text-light: 300;
+
+  --height-full: 100%;
+
+  --box-shadow--01: rgba(0, 0, 0, 0.16) 0 0 0 0.0625rem;
+  --box-shadow--02: rgba(0, 0, 0, 0.16) 0 0.0625rem 0.25rem 0.0625rem;
+  --box-shadow--03: rgba(236, 238, 241, 0.16) 0 0 0.25rem 0;
+
+  --opacity--hover: 0.55;
+}
