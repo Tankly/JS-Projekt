@@ -1,0 +1,14 @@
+.u-flex {
+  display: flex;
+  &__grow {
+    &--3 {
+      flex-grow: 3;
+    }
+    &--2 {
+      flex-grow: 2;
+    }
+    & {
+      flex-grow: 1;
+    }
+  }
+}
