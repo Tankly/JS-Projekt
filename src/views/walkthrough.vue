@@ -13,8 +13,16 @@
         </p>
       </div>
       <div class="c-walkthrough-bottom__buttons">
-        <BaseButtonShadow size="large">Sign in</BaseButtonShadow>
-        <BaseButtonShadow size="large">Sign up</BaseButtonShadow>
+        <BaseButtonShadow
+          to="login"
+          size="large"
+          >Sign in</BaseButtonShadow
+        >
+        <BaseButtonShadow
+          to="register"
+          size="large"
+          >Sign up</BaseButtonShadow
+        >
       </div>
     </section>
   </div>
@@ -25,5 +33,6 @@ import BaseButtonShadow from '@/components/general/molecules/BaseButtonShadow.vu
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  components: { BaseButtonShadow },})
+  components: { BaseButtonShadow },
+})
 </script>
