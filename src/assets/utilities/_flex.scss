@@ -1,5 +1,15 @@
 .u-flex {
   display: flex;
+  &--direction-column {
+    flex-direction: column;
+  }
+  &--center {
+    justify-content: center;
+    align-items: center;
+  }
+  &--align-items {
+    align-items: center;
+  }
   &__grow {
     &--3 {
       flex-grow: 3;
