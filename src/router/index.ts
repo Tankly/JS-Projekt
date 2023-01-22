@@ -5,6 +5,7 @@ import settings from '@/views/settings.vue'
 import TheLoginLayoutVue from '@/layouts/TheLoginLayout.vue'
 import walkthrough from '@/views/walkthrough.vue'
 import login from '@/views/login.vue'
+import register from '@/views/register.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,6 +25,16 @@ const router = createRouter({
       component: login,
       meta: {
         layout: TheLoginLayoutVue,
+      },
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: register,
+      meta: {
+        layout: TheLoginLayoutVue,
+        backgroundImage: 'img/backgrounds/register-background.png',
+
       },
     },
     {
