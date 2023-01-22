@@ -36,3 +36,24 @@ export default defineComponent({
   components: { BaseButtonShadow },
 })
 </script>
+<style lang="scss" scoped>
+.c-walkthrough {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.c-walkthrough-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .c-walkthrough-bottom__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+}
+</style>

@@ -4,6 +4,7 @@ import thrash from '@/views/thrash.vue'
 import settings from '@/views/settings.vue'
 import TheLoginLayoutVue from '@/layouts/TheLoginLayout.vue'
 import walkthrough from '@/views/walkthrough.vue'
+import login from '@/views/login.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,6 +16,14 @@ const router = createRouter({
       meta: {
         layout: TheLoginLayoutVue,
         backgroundImage: 'img/backgrounds/walkthrough-background.png',
+      },
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login,
+      meta: {
+        layout: TheLoginLayoutVue,
       },
     },
     {
