@@ -1,0 +1,57 @@
+.u-width--full {
+  width: 100%;
+}
+
+.u-width--inherit {
+  width: inherit;
+}
+
+.u-width {
+  &--90 {
+    width: 90%;
+  }
+  &--80 {
+    width: 80%;
+  }
+  &--70 {
+    width: 70%;
+  }
+  &--60 {
+    width: 60%;
+  }
+  &--50 {
+    width: 50%;
+  }
+  &--40 {
+    width: 40%;
+  }
+  &--30 {
+    width: 30%;
+  }
+  &--20 {
+    width: 20%;
+  }
+  &--10 {
+    width: 10%;
+  }
+}
+
+.u-width--auto {
+  width: auto;
+}
+
+.u-max-width--max-content {
+  max-width: max-content;
+}
+
+.u-height--full {
+  height: 100%;
+}
+
+.u-height--auto {
+  height: auto;
+}
+
+.u-height--inherit {
+  height: inherit;
+}
