@@ -57,6 +57,9 @@ export default defineComponent({
   height: 100%;
   color: white;
   padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {

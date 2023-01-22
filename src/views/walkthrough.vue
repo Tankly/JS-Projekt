@@ -48,12 +48,12 @@ export default defineComponent({
 .c-walkthrough-bottom {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--gap--xxl);
 
   .c-walkthrough-bottom__buttons {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: var(--gap--xxl);
   }
 }
 </style>

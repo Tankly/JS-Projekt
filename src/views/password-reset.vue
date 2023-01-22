@@ -1,43 +1,29 @@
 <template>
   <div class="c-login-layout-elements-arrangement">
-    <p class="c-large-title--01 u-text-align--center">
-      Sign in to Your Account
-    </p>
+    <p class="c-large-title--01 u-text-align--center">Type your email</p>
     <div>
       <BaseInput
         label="Email"
-        type="password"
-        bg-color="rgba(255,255,255,0.4)"
-        color="#fff"
-        v-model="password"
-      />
-      <BaseInput
-        label="Password"
-        type="password"
+        type="email"
         bg-color="rgba(255,255,255,0.4)"
         color="#fff"
         v-model="password"
       />
     </div>
-    <router-link
-      to="password-reset"
-      class="c-subhead--01 u-text-align--right"
-      >Forgot your password?</router-link
-    >
     <BaseButton
       color="secondary"
       size="large"
       block
     >
-      Sign in
+      Reset password
     </BaseButton>
     <p class="u-text-align--center">
-      <span class="c-body--01">Not yet a member?</span>
+      <span class="c-body--01">Are you lost?</span>
       <router-link
-        to="/register"
+        to="/login"
         class="c-body--02"
       >
-        Sign up
+        Sign in
       </router-link>
     </p>
   </div>
