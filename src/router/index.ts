@@ -1,16 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import index from '@/views/index.vue'
 import lists from '@/views/lists.vue'
 import thrash from '@/views/thrash.vue'
 import settings from '@/views/settings.vue'
+import TheLoginLayoutVue from '@/layouts/TheLoginLayout.vue'
+import Walkthrough from '@/views/Walkthrough.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: index,
+      name: 'index',
+      component: Walkthrough,
+      meta: {
+        layout: TheLoginLayoutVue,
+        backgroundImage: 'img/backgrounds/walkthrough-background.png',
+      },
     },
     {
       path: '/lists',

@@ -1,0 +1,19 @@
+<template>
+  <div class="c-button-shadow">
+    <BaseButton
+      class="c-button-shadow__button"
+      v-bind="$attrs"
+    >
+      <slot></slot>
+    </BaseButton>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+import BaseButton from '../atoms/BaseButton.vue'
+
+export default defineComponent({
+  components: { BaseButton },
+})
+</script>
