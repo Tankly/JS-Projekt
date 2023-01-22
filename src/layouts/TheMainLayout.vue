@@ -1,8 +1,10 @@
 <template>
-  <TheTopNav />
-  <v-navigation-drawer>drawer</v-navigation-drawer>
-  <slot></slot>
-  <TheBottomNav />
+  <v-main>
+    <TheTopNav />
+    <v-navigation-drawer>drawer</v-navigation-drawer>
+    <slot></slot>
+    <TheBottomNav />
+  </v-main>
 </template>
 
 <script lang="ts">

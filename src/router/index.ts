@@ -3,15 +3,15 @@ import lists from '@/views/lists.vue'
 import thrash from '@/views/thrash.vue'
 import settings from '@/views/settings.vue'
 import TheLoginLayoutVue from '@/layouts/TheLoginLayout.vue'
-import Walkthrough from '@/views/Walkthrough.vue'
+import walkthrough from '@/views/walkthrough.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'index',
-      component: Walkthrough,
+      name: 'walkthrough',
+      component: walkthrough,
       meta: {
         layout: TheLoginLayoutVue,
         backgroundImage: 'img/backgrounds/walkthrough-background.png',
