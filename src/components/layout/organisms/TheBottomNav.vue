@@ -4,19 +4,19 @@
       to="/lists"
       size="x-large"
       icon="mdi-list-status"
-      label="Listy"
+      label="Lists"
     />
     <BtnWithBottomText
       to="/thrash"
       size="x-large"
       icon="mdi-trash-can"
-      label="Kosz"
+      label="Thrash"
     />
     <BtnWithBottomText
       to="settings"
       size="x-large"
       icon="mdi-cog"
-      label="Ustawienia"
+      label="Settings"
     />
   </v-bottom-navigation>
 </template>

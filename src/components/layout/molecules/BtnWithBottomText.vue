@@ -1,5 +1,5 @@
 <template>
-  <div class="u-flex u-flex__grow--3 u-flex--center">
+  <div class="o-flex o-flex__grow--3 o-flex--center">
     <BaseButton
       class="u-width--full"
       v-bind="$attrs"
