@@ -1,0 +1,100 @@
+.u-padding {
+  &__vertical--xxl {
+    padding: 3rem 0;
+  }
+  &__vertical--xl {
+    padding: 2rem 0;
+  }
+  &__vertical {
+    padding: 1rem 0;
+  }
+  &__vertical--xs {
+    padding: 0.5rem 0;
+  }
+  &__horizontal--xxl {
+    padding: 0 3rem;
+  }
+  &__horizontal--xl {
+    padding: 0 2rem;
+  }
+  &__horizontal {
+    padding: 0 1rem;
+  }
+  &__horizontal--xs {
+    padding: 0 0.5rem;
+  }
+  &__top--xxxl {
+    padding-top: 3rem;
+  }
+  &__top--xxl {
+    padding-top: 2rem;
+  }
+  &__top--xl {
+    padding-top: 1.5rem;
+  }
+  &__top {
+    padding-top: 1rem;
+  }
+  &__top--xs {
+    padding-top: 0.5rem;
+  }
+  &__bottom--xxl {
+    padding-bottom: 3rem;
+  }
+  &__bottom--xl {
+    padding-bottom: 2rem;
+  }
+  &__bottom {
+    padding-bottom: 1rem;
+  }
+  &__bottom--xs {
+    padding-bottom: 0.5rem;
+  }
+  & {
+    padding: 1rem;
+  }
+  &--xs {
+    padding: 0.5rem;
+  }
+  &--xxs {
+    padding: 0.3rem;
+  }
+  &--none {
+    padding: unset;
+  }
+  &__horizontal--none {
+    padding-left: unset;
+    padding-right: unset;
+  }
+  &__vertical--none {
+    padding-top: unset;
+    padding-bottom: unset;
+  }
+  &__top--none {
+    padding-top: unset;
+  }
+  &__bottom--none {
+    padding-bottom: unset;
+  }
+  &__left--none {
+    padding-left: unset;
+  }
+  &__left--xs {
+    padding-left: 0.5rem;
+  }
+  &__right--none {
+    padding-right: unset;
+  }
+  &__right--xs {
+    padding-right: 0.5rem;
+  }
+  &__main {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  @media all and (max-width: 767px) {
+    &__main {
+      padding: 3.5rem 0 0.5rem 0;
+    }
+  }
+}

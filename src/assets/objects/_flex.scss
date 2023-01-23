@@ -1,4 +1,4 @@
-.u-flex {
+.o-flex {
   display: flex;
   &--direction-column {
     flex-direction: column;
@@ -7,7 +7,10 @@
     justify-content: center;
     align-items: center;
   }
-  &--align-items {
+  &--space-between {
+    justify-content: space-between;
+  }
+  &__vertical--center {
     align-items: center;
   }
   &__grow {
