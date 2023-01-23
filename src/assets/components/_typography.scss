@@ -1,89 +1,100 @@
-.c-headline--01 {
-  font-size: var(--font-size--l);
-  line-height: var(--line-height--xxl);
-  font-weight: var(--text-normal);
+.c-headline {
+  &--01 {
+    font-size: var(--font-size--l);
+    line-height: var(--line-height--xxl);
+    font-weight: var(--text-bolder--01);
+  }
 }
-.c-body--01 {
-  font-size: var(--font-size--l);
-  line-height: var(--line-height--xxl);
-  font-weight: var(--text-normal);
-}
-.c-body--02 {
-  font-size: var(--font-size--l);
-  line-height: var(--line-height--xxl);
-  font-weight: var(--text-bolder--01);
-}
-
-.c-subhead--01 {
-  font-size: var(--font-size--s);
-  line-height: var(--line-height--xl);
-  font-weight: var(--text-normal);
+.c-body {
+  &--01 {
+    font-size: var(--font-size--l);
+    line-height: var(--line-height--xxl);
+    font-weight: var(--text-normal);
+  }
+  &--02 {
+    font-size: var(--font-size--l);
+    line-height: var(--line-height--xxl);
+    font-weight: var(--text-bolder--01);
+  }
 }
 
-.c-subhead--02 {
-  font-size: var(--font-size--s);
-  line-height: var(--line-height--xl);
-  font-weight: var(--text-bolder--01);
+.c-subhead {
+  &--01 {
+    font-size: var(--font-size--s);
+    line-height: var(--line-height--xl);
+    font-weight: var(--text-lighter--01);
+  }
+  &--02 {
+    font-size: var(--font-size--s);
+    line-height: var(--line-height--xl);
+    font-weight: var(--text-bolder--01);
+  }
+  &--03 {
+    font-size: var(--font-size--s);
+    line-height: var(--line-height--xl);
+    font-weight: var(--text-bolder--01);
+    text-transform: uppercase;
+  }
+  &--04 {
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--l);
+    font-weight: var(--text-bolder--01);
+    text-transform: uppercase;
+  }
 }
 
-.c-subhead--03 {
-  font-size: var(--font-size--s);
-  line-height: var(--line-height--xl);
-  font-weight: var(--text-bolder--01);
-  text-transform: uppercase;
+.c-footnote {
+  &--footnote {
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height--l);
+    font-weight: var(--text-normal);
+  }
 }
 
-.c-subhead--04 {
-  font-size: var(--font-size--xs);
-  line-height: var(--line-height--l);
-  font-weight: var(--text-bolder--01);
-  text-transform: uppercase;
+.c-caption {
+  &--01 {
+    font-size: var(--font-size--xs);
+    line-height: var(--line-height);
+    font-weight: var(--text-bolder--01);
+  }
+  &--02 {
+    font-size: var(--font-size--xxs);
+    line-height: var(--line-height--xs);
+    font-weight: var(--text-bolder--01);
+  }
+  &--03 {
+    font-size: var(--font-size--xxxs);
+    line-height: var(--line-height--xs);
+    font-weight: var(--text-lighter--01);
+  }
 }
 
-.c-footnote--01 {
-  font-size: var(--font-size--xs);
-  line-height: var(--line-height--l);
-  font-weight: var(--text-normal);
+
+.c-large-title {
+  &--01 {
+    font-size: var(--font-size--xxxl);
+    line-height: var(--line-height--xxxxxl);
+    font-weight: var(--text-bolder--03);
+  }
 }
 
-.c-caption--01 {
-  font-size: var(--font-size--xs);
-  line-height: var(--line-height);
-  font-weight: var(--text-bolder--01);
+.c-title {
+  &--01 {
+    font-size: var(--font-size--xxl);
+    line-height: var(--line-height--xxxxl);
+    font-weight: var(--text-bolder--01);
+  }
+  &--02 {
+    font-size: var(--font-size--xl);
+    line-height: var(--line-height--xxxl);
+    font-weight: var(--text-normal);
+  }
 }
 
-.c-caption--02 {
-  font-size: var(--font-size--xxs);
-  line-height: var(--line-height--xs);
-  font-weight: var(--text-bolder--01);
-}
-
-.c-caption--03 {
-  font-size: var(--font-size--xxxs);
-  line-height: var(--line-height--xs);
-  font-weight: var(--text-lighter--01);
-}
-
-.c-large-title--01 {
-  font-size: var(--font-size--xxxl);
-  line-height: var(--line-height--xxxxxl);
-  font-weight: var(--text-bolder--03);
-}
-
-.c-title--01 {
-  font-size: var(--font-size--xxl);
-  line-height: var(--line-height--xxxxl);
-  font-weight: var(--text-bolder--02);
-}
-
-.c-title--01 {
-  font-size: var(--font-size--xl);
-  line-height: var(--line-height--xxxl);
-  font-weight: var(--text-bolder--01);
-}
-
-.c-help-text--01 {
-  font-size: var(--font-size--xl);
-  line-height: var(--line-height--xxxl);
-  font-weight: var(--text-normal);
+.c-help-text {
+  &--01 {
+    font-size: var(--font-size--xl);
+    line-height: var(--line-height--xxxl);
+    font-weight: var(--text-normal);
+  }
 }
