@@ -7,6 +7,10 @@ import walkthrough from '@/views/walkthrough.vue'
 import login from '@/views/login.vue'
 import register from '@/views/register.vue'
 import passwordreset from '@/views/password-reset.vue'
+import buildMiddleware from './middlewareBuilder'
+import onVueReady from './onVueReady'
+import authenticationGuard from '@/middleware/authenticationGuard'
+import unauthenticatedCheck from '@/middleware/unauthenticatedCheck'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,6 +21,7 @@ const router = createRouter({
       component: walkthrough,
       meta: {
         layout: TheLoginLayoutVue,
+        middleware: unauthenticatedCheck,
         backgroundImage: 'img/backgrounds/walkthrough-background.png',
       },
     },
@@ -26,6 +31,7 @@ const router = createRouter({
       component: login,
       meta: {
         layout: TheLoginLayoutVue,
+        middleware: unauthenticatedCheck,
         backgroundImage: 'img/backgrounds/login-background.png',
       },
     },
@@ -35,6 +41,7 @@ const router = createRouter({
       component: passwordreset,
       meta: {
         layout: TheLoginLayoutVue,
+        middleware: unauthenticatedCheck,
         backgroundImage: 'img/backgrounds/password-reset-background.png',
       },
     },
@@ -44,6 +51,7 @@ const router = createRouter({
       component: register,
       meta: {
         layout: TheLoginLayoutVue,
+        middleware: unauthenticatedCheck,
         backgroundImage: 'img/backgrounds/register-background.png',
       },
     },
@@ -51,18 +59,29 @@ const router = createRouter({
       path: '/lists',
       name: 'Lists',
       component: lists,
+      meta: {
+        middleware: authenticationGuard,
+      },
     },
     {
       path: '/thrash',
       name: 'Thrash',
       component: thrash,
+      meta: {
+        middleware: authenticationGuard,
+      },
     },
     {
       path: '/settings',
       name: 'Settings',
       component: settings,
+      meta: {
+        middleware: authenticationGuard,
+      },
     },
   ],
 })
 
-export default router
+router.beforeResolve(onVueReady)
+
+export default buildMiddleware(router)
