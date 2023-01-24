@@ -36,7 +36,7 @@ apiClient.interceptors.response.use(
     } else if (code == 401) {
       auth.clear()
       router.push({ name: 'login' })
-    } else if (data.message) {
+    } else if (data && data.message) {
       alertStore.fire(data.message, AlertTypeEnum.WARNING)
     }
     return Promise.reject(error)
