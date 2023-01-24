@@ -2,7 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.web.json",
   "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
   "compilerOptions": {
-    "types": ["node", "vuetify"],
+    "types": ["node", "vuetify", "@types/js-cookie"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

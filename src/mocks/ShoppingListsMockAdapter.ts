@@ -1,7 +1,6 @@
-import type { AxiosInstance } from 'axios'
-import MockAdapter from 'axios-mock-adapter'
+import BaseMockAdapter from './BaseMockAdapter'
 
-export default class ShoppingListsMockAapter extends MockAdapter {
+export default class ShoppingListsMockAapter extends BaseMockAdapter {
   shoppingList = [
     {
       name: 'test name',
@@ -28,14 +27,9 @@ export default class ShoppingListsMockAapter extends MockAdapter {
     },
   ]
 
-  constructor(axios: AxiosInstance) {
-    super(axios)
-    this.onGet('/shopping_lists').reply(200, this.shoppingList)
-    this.onPost('/shopping_lists').reply((config) => {
-      // this.posts.push({
-      //   id: 2,
-      //   name: 'xd',
-      // })
+  execute(): void {
+    this.adapter.onGet('/shopping_lists').reply(200, this.shoppingList)
+    this.adapter.onPost('/shopping_lists').reply((config) => {
       return [200, this.shoppingList]
     })
   }

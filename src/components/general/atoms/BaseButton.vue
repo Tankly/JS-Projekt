@@ -6,7 +6,6 @@
     :hideDetails="hideDetails"
     :color="color"
     :singleLine="singleLine"
-    @click="(...e) => $emit('click', ...e)"
   >
     <slot></slot>
   </v-btn>
