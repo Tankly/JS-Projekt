@@ -1,9 +1,18 @@
 <template>
-  <v-app-bar id="app-bar">
+  <v-app-bar>
     <v-app-bar-title class="o-flex__grow--3">
       {{ $route.name }}
     </v-app-bar-title>
     <img :src="`${publicPath}img/logo-64x64.png`" />
+    <template
+      v-if="$route?.meta?.extension"
+      v-slot:extension
+    >
+      <div
+        id="app-bar"
+        class="u-width--full"
+      ></div>
+    </template>
   </v-app-bar>
 </template>
 

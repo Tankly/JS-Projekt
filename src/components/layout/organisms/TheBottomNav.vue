@@ -2,19 +2,16 @@
   <v-bottom-navigation color="primary">
     <BtnWithBottomText
       to="/lists"
-      size="x-large"
       icon="mdi-list-status"
       label="Lists"
     />
     <BtnWithBottomText
       to="/thrash"
-      size="x-large"
       icon="mdi-trash-can"
       label="Thrash"
     />
     <BtnWithBottomText
       to="settings"
-      size="x-large"
       icon="mdi-cog"
       label="Settings"
     />

@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import lists from '@/views/lists.vue'
+import list from '@/views/list.vue'
 import thrash from '@/views/thrash.vue'
 import settings from '@/views/settings.vue'
 import TheLoginLayoutVue from '@/layouts/TheLoginLayout.vue'
@@ -51,6 +52,17 @@ const router = createRouter({
       path: '/lists',
       name: 'Lists',
       component: lists,
+      meta: {
+        extension: true,
+      },
+    },
+    {
+      path: '/lists/:id',
+      name: 'List',
+      component: list,
+      meta: {
+        extension: true,
+      },
     },
     {
       path: '/thrash',
