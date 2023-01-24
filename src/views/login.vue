@@ -82,7 +82,6 @@ export default defineComponent({
     onSubmit() {
       if (this.validForm) {
         this.loading = true
-        console.log('xd')
         AuthService.login(this.email as string, this.password as string)
           .then((data: LoginResponseInterface) => {
             this.authStore.authorize(data)
