@@ -1,7 +1,6 @@
-import type { AxiosInstance } from 'axios'
-import MockAdapter from 'axios-mock-adapter'
+import BaseMockAdapter from './BaseMockAdapter'
 
-export default class ShoppingListsMockAapter extends MockAdapter {
+export default class ShoppingListsMockAapter extends BaseMockAdapter {
   shoppingList = [
     {
       id: 1,
@@ -77,17 +76,14 @@ export default class ShoppingListsMockAapter extends MockAdapter {
     },
   ]
 
-  constructor(axios: AxiosInstance) {
-    super(axios)
-    this.onGet('/shopping_lists').reply(200, this.shoppingList)
-    // const urlWithId = new RegExp('/\/shopping_lists\/\d+')
-    // eslint-disable-next-line prettier/prettier, no-useless-escape
-    this.onGet('/shopping_lists/2').reply((config) => {
+  execute(): void {
+    this.adapter.onGet('/shopping_lists').reply(200, this.shoppingList)
+    this.adapter.onPost('/shopping_lists').reply((config) => {
       const id = config.url?.split('/').at(-1) || 0
       const response = this.shoppingList.find((Object) => {
         return Object.id == id
       })
-      return [200, response]
+      return [200, this.shoppingList]
     })
   }
 }
