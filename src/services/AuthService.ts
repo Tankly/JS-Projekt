@@ -46,6 +46,26 @@ class AuthService {
     })
   }
 
+  register(
+    name: string,
+    email: string,
+    password: string
+  ): Promise<LoginResponseInterface> {
+    return new Promise((resolve, reject) => {
+      axios
+        .post('/auth/register', {
+          name,
+          email,
+          password,
+        })
+        .then((response: AxiosResponse) => {
+          resolve(response.data)
+        })
+        .catch((e: AxiosError) => {
+          reject(e)
+        })
+    })
+  }
   updateUser(
     name: string,
     email: string,
@@ -63,6 +83,20 @@ class AuthService {
         .patch('/auth/user', data)
         .then((response: AxiosResponse) => {
           resolve(response.data)
+        })
+        .catch((e: AxiosError) => {
+          reject(e)
+        })
+    })
+  }
+  resetPassword(email: string): Promise<boolean> {
+    return new Promise((resolve, reject) => {
+      axios
+        .post('/auth/password-reset', {
+          email,
+        })
+        .then(() => {
+          resolve(true)
         })
         .catch((e: AxiosError) => {
           reject(e)
