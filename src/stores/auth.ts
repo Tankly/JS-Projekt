@@ -47,8 +47,8 @@ export const useAuthStore = defineStore({
       })
     },
     clear(): void {
-      this.setUser()
       Cookies.remove('x-access-token')
+      this.setUser()
     },
     setUser(user: AuthUserInteface | null = null): void {
       if (user) {

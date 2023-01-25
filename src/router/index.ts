@@ -6,7 +6,8 @@ import TheLoginLayoutVue from '@/layouts/TheLoginLayout.vue'
 import walkthrough from '@/views/walkthrough.vue'
 import login from '@/views/login.vue'
 import register from '@/views/register.vue'
-import passwordreset from '@/views/password-reset.vue'
+import passwordReset from '@/views/password-reset.vue'
+import editAccount from '@/views/edit-account.vue'
 import buildMiddleware from './middlewareBuilder'
 import onVueReady from './onVueReady'
 import authenticationGuard from '@/middleware/authenticationGuard'
@@ -38,7 +39,7 @@ const router = createRouter({
     {
       path: '/password-reset',
       name: 'password-reset',
-      component: passwordreset,
+      component: passwordReset,
       meta: {
         layout: TheLoginLayoutVue,
         middleware: unauthenticatedCheck,
@@ -75,6 +76,14 @@ const router = createRouter({
       path: '/settings',
       name: 'Settings',
       component: settings,
+      meta: {
+        middleware: authenticationGuard,
+      },
+    },
+    {
+      path: '/account-edit',
+      name: 'Edit account',
+      component: editAccount,
       meta: {
         middleware: authenticationGuard,
       },

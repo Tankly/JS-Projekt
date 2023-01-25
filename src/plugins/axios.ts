@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { type AxiosRequestConfig } from 'axios'
 import type { AxiosInstance } from 'axios'
 import initMocks from '@/mocks/adapter'
 import { useAlertStore } from '@/stores/alert'
@@ -15,10 +15,10 @@ const apiClient: AxiosInstance = axios.create({
     'Content-type': 'application/json',
   },
 })
-apiClient.interceptors.request.use(function (config) {
+apiClient.interceptors.request.use(function (config: AxiosRequestConfig) {
   const token = Cookies.get('x-access-token')
   if (token) {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+    config.headers.set('Authorization', `Bearer ${token}`)
   }
   return config
 })
@@ -35,8 +35,9 @@ apiClient.interceptors.response.use(
       alertStore.fire('Internal server errror', AlertTypeEnum.ERROR)
     } else if (code == 401) {
       auth.clear()
+      alertStore.fire('Unauthorized', AlertTypeEnum.WARNING)
       router.push({ name: 'login' })
-    } else if (data.message) {
+    } else if (data && data.message) {
       alertStore.fire(data.message, AlertTypeEnum.WARNING)
     }
     return Promise.reject(error)
