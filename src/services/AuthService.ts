@@ -1,5 +1,6 @@
 import type AuthUserInteface from '@/interfaces/AuthUserInteface'
 import type LoginResponseInterface from '@/interfaces/Responses/LoginResponseInterface'
+import type JSONRequestInterface from '@/interfaces/JSONRequestInterface'
 import axios from '@/plugins/axios'
 import type { AxiosError, AxiosResponse } from 'axios'
 
@@ -65,7 +66,29 @@ class AuthService {
         })
     })
   }
-
+  updateUser(
+    name: string,
+    email: string,
+    password: string | null = null
+  ): Promise<AuthUserInteface> {
+    const data = {
+      name,
+      email,
+    } as JSONRequestInterface
+    if (password) {
+      data.password = password
+    }
+    return new Promise((resolve, reject) => {
+      axios
+        .patch('/auth/user', data)
+        .then((response: AxiosResponse) => {
+          resolve(response.data)
+        })
+        .catch((e: AxiosError) => {
+          reject(e)
+        })
+    })
+  }
   resetPassword(email: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
       axios
