@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import lists from '@/views/lists.vue'
+import list from '@/views/list.vue'
 import thrash from '@/views/thrash.vue'
 import settings from '@/views/settings.vue'
 import TheLoginLayoutVue from '@/layouts/TheLoginLayout.vue'
@@ -61,6 +62,16 @@ const router = createRouter({
       component: lists,
       meta: {
         middleware: authenticationGuard,
+        extension: true,
+      },
+    },
+    {
+      path: '/lists/:id',
+      name: 'List',
+      component: list,
+      meta: {
+        middleware: authenticationGuard,
+        extension: true,
       },
     },
     {

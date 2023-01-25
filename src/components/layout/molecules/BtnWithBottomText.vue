@@ -24,10 +24,6 @@ export default defineComponent({
       type: String,
       required: true,
     },
-    size: {
-      type: String,
-      default: 'medium',
-    },
   },
   components: { BaseButton },
 })
