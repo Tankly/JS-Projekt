@@ -1,6 +1,6 @@
 <template>
   <ShooppingHeader />
-  <ShoppingContent :items="items" />
+  <ShoppingContent :items="(items as  Array<ShoppingListInterface>)" />
 </template>
 
 <script lang="ts">

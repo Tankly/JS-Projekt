@@ -11,7 +11,7 @@ export default class ShoppingListsMockAapter extends BaseMockAdapter {
         {
           name: 'milk',
           category: 'Dairy',
-          pirce: 3.2,
+          price: 3.2,
           currencyCode: 'PLN',
           quantity: 2,
           note: '2%',
@@ -35,7 +35,7 @@ export default class ShoppingListsMockAapter extends BaseMockAdapter {
         {
           name: 'milk',
           category: 'Dairy',
-          pirce: 3.2,
+          price: 3.2,
           currencyCode: 'PLN',
           quantity: 2,
           note: '2%',
@@ -59,7 +59,7 @@ export default class ShoppingListsMockAapter extends BaseMockAdapter {
         {
           name: 'milk',
           category: 'Dairy',
-          pirce: 3.2,
+          price: 3.2,
           currencyCode: 'PLN',
           quantity: 2,
           note: '2%',
@@ -78,12 +78,14 @@ export default class ShoppingListsMockAapter extends BaseMockAdapter {
 
   execute(): void {
     this.adapter.onGet('/shopping_lists').reply(200, this.shoppingList)
-    this.adapter.onPost('/shopping_lists').reply((config) => {
-      const id = config.url?.split('/').at(-1) || 0
-      const response = this.shoppingList.find((Object) => {
-        return Object.id == id
+    for (let i = 1; i <= 20; i++) {
+      this.adapter.onGet(`/shopping_lists/${i}`).reply((config) => {
+        const id = config.url?.split('/').at(-1) || 0
+        const response = this.shoppingList.find((Object) => {
+          return Object.id == id
+        })
+        return [200, response]
       })
-      return [200, this.shoppingList]
-    })
+    }
   }
 }

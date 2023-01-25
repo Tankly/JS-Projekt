@@ -83,7 +83,7 @@ export default defineComponent({
   display: flex;
   gap: 3px;
   position: absolute;
-  right: -70%;
+  right: -75%;
 }
 .transform {
   -webkit-transition: all 2s ease;
