@@ -5,7 +5,6 @@
       :class="`c-alert--${alertStore.show ? 'active' : 'disable'}`"
       :value="true"
       :color="type.color"
-      border="left"
       elevation="2"
       dense
       prominent
