@@ -8,6 +8,7 @@ import walkthrough from '@/views/walkthrough.vue'
 import login from '@/views/login.vue'
 import register from '@/views/register.vue'
 import passwordReset from '@/views/password-reset.vue'
+import listsAdd from '@/views/lists-add.vue'
 import editAccount from '@/views/edit-account.vue'
 import buildMiddleware from './middlewareBuilder'
 import onVueReady from './onVueReady'
@@ -70,6 +71,15 @@ const router = createRouter({
       path: '/lists/:id',
       name: 'List',
       component: list,
+      meta: {
+        middleware: authenticationGuard,
+        extension: true,
+      },
+    },
+    {
+      path: '/lists-add',
+      name: 'Add list',
+      component: listsAdd,
       meta: {
         middleware: authenticationGuard,
         extension: true,
