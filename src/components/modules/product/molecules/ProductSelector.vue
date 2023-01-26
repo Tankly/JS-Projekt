@@ -1,35 +1,37 @@
 <template>
-  <v-list-item
-    v-for="product in products"
-    :key="product.id"
-    :title="product.name"
-    :subtitle="`Category: ${product.category}`"
-  >
-    <template #prepend>
-      <v-icon
-        color="primary"
-        @click="handleProduct(product)"
-      >
-        {{
-          selectedProducts[product.id]
-            ? 'mdi-plus-circle'
-            : 'mdi-plus-circle-outline'
-        }}
-      </v-icon>
-    </template>
-    <template #append>
-      <div
-        v-if="selectedProducts[product.id]"
-        class="c-product-quantity-modify"
-      >
-        <v-icon @click="increaseQuantity(product.id)">mdi-plus</v-icon>
-        <span class="c-product-quantity-modify__quantity">
-          {{ selectedProducts[product.id].quantity }}
-        </span>
-        <v-icon @click="decreaseQuantity(product.id)">mdi-minus</v-icon>
-      </div>
-    </template>
-  </v-list-item>
+  <div class="c-product-selector">
+    <v-list-item
+      v-for="product in products"
+      :key="product.id"
+      :title="product.name"
+      :subtitle="`Category: ${product.category}`"
+    >
+      <template #prepend>
+        <v-icon
+          color="primary"
+          @click="handleProduct(product)"
+        >
+          {{
+            selectedProducts[product.id]
+              ? 'mdi-plus-circle'
+              : 'mdi-plus-circle-outline'
+          }}
+        </v-icon>
+      </template>
+      <template #append>
+        <div
+          v-if="selectedProducts[product.id]"
+          class="c-product-quantity-modify"
+        >
+          <v-icon @click="increaseQuantity(product.id)">mdi-plus</v-icon>
+          <span class="c-product-quantity-modify__quantity">
+            {{ selectedProducts[product.id].quantity }}
+          </span>
+          <v-icon @click="decreaseQuantity(product.id)">mdi-minus</v-icon>
+        </div>
+      </template>
+    </v-list-item>
+  </div>
 </template>
 
 <script lang="ts">
@@ -94,5 +96,9 @@ export default defineComponent({
 .c-product-quantity-modify__quantity {
   width: 2rem;
   text-align: center;
+}
+.c-product-selector {
+  height: calc(100% - 168px);
+  overflow-y: scroll;
 }
 </style>

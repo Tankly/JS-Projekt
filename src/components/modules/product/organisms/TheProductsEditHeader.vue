@@ -13,7 +13,7 @@
         variant="text"
         @click="$emit('save')"
       >
-        <span class="c-body--02">Edit</span>
+        <span class="c-body--02">Save</span>
       </BaseButton>
     </div>
   </Teleport>

@@ -96,7 +96,7 @@ export default defineComponent({
     editProducts() {
       ShoppingListService.editProducts(this.listId, this.selectedProducts).then(
         () => {
-          this.alertStore.fire('Products added!')
+          this.alertStore.fire('List modified!')
           this.$router.push(`/lists/${this.listId}`)
         }
       )
