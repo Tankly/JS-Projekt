@@ -30,17 +30,11 @@
       />
       <BtnWithBottomText
         stacked
-        color="info"
-        max-height="64"
-        icon="mdi-pencil"
-        label="Edit"
-      />
-      <BtnWithBottomText
-        stacked
         color="error"
         max-height="64"
         icon="mdi-trash-can"
         label="Delete"
+        @click.stop="$emit('delList', data.id)"
       />
     </div>
   </div>
@@ -83,7 +77,7 @@ export default defineComponent({
   display: flex;
   gap: 3px;
   position: absolute;
-  right: -75%;
+  right: -55%;
 }
 .transform {
   -webkit-transition: all 2s ease;
@@ -93,7 +87,7 @@ export default defineComponent({
   transition: all 2s ease;
 }
 .sildeLeft {
-  left: -260px;
+  left: -190px;
 }
 .slideRight {
   right: 1%;

@@ -8,6 +8,7 @@
         v-for="(item, index) in items"
         :key="index"
         :data="(item as Object)"
+        @delList="(id) => $emit('delList', id)"
       />
     </div>
     <div

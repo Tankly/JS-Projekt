@@ -1,6 +1,7 @@
 import BaseMockAdapter from './BaseMockAdapter'
 
 export default class ShoppingListsMockAapter extends BaseMockAdapter {
+  private id = 3
   shoppingList = [
     {
       id: 1,
@@ -77,6 +78,14 @@ export default class ShoppingListsMockAapter extends BaseMockAdapter {
   ]
 
   execute(): void {
+    this.adapter.onPost('/shopping_lists').reply((config) => {
+      const data = JSON.parse(config.data).data
+      this.id++
+      data.id = this.id
+      data.items = []
+      this.shoppingList.push(data)
+      return [200]
+    })
     this.adapter.onGet('/shopping_lists').reply(200, this.shoppingList)
     for (let i = 1; i <= 20; i++) {
       this.adapter.onGet(`/shopping_lists/${i}`).reply((config) => {
@@ -85,6 +94,14 @@ export default class ShoppingListsMockAapter extends BaseMockAdapter {
           return Object.id == id
         })
         return [200, response]
+      })
+      this.adapter.onDelete(`/shopping_lists/${i}`).reply((config) => {
+        const id = config.url?.split('/').at(-1) || 0
+        const index = this.shoppingList.findIndex((object) => {
+          return object.id == id
+        })
+        this.shoppingList.splice(index, 1)
+        return [200]
       })
     }
   }

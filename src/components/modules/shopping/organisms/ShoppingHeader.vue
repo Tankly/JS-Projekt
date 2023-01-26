@@ -4,7 +4,10 @@
       class="o-flex o-flex--space-between u-width--full o-flex__vertical--center"
     >
       <span class="c-large-title--01 u-padding__horizontal">Lists</span>
-      <BaseButton variant="text">
+      <BaseButton
+        variant="text"
+        to="lists-add"
+      >
         <span class="c-body--02">Add list</span>
       </BaseButton>
     </div>
