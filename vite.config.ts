@@ -27,7 +27,14 @@ export default defineConfig({
         short_name: 'Shopping list',
         description: 'Shopping list',
         start_url: '/',
+        theme_color: '#FFFFFF',
         icons: [
+          {
+            src: 'img/icons/pwa-64x64.png',
+            sizes: '64x64',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
           {
             src: 'img/icons/pwa-192x192.png',
             sizes: '192x192',
@@ -37,12 +44,6 @@ export default defineConfig({
             src: 'img/icons/pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
-          },
-          {
-            src: 'img/icons/pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any maskable',
           },
         ],
       },

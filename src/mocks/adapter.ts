@@ -5,9 +5,7 @@ import ProductMockAdapter from './ProductMockAdapter'
 import ShoppingListsMockAdapter from './ShoppingListsMockAdapter'
 
 export default function (axios: AxiosStatic) {
-  const mockAdapter = new MockAdapter(axios, {
-    delayResponse: 500,
-  })
+  const mockAdapter = new MockAdapter(axios)
   const authMockAdapter = new AuthMockAdapter(mockAdapter)
   const shoppingListsMockAdapter = new ShoppingListsMockAdapter(mockAdapter)
   const productMockAdapter = new ProductMockAdapter(mockAdapter)
