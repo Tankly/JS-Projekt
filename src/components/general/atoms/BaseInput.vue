@@ -12,17 +12,19 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  outlined: {
-    type: Boolean,
-    default: true,
-  },
-  dense: {
-    type: Boolean,
-    default: true,
-  },
-  type: {
-    type: String,
-    default: 'text',
+  props: {
+    outlined: {
+      type: Boolean,
+      default: true,
+    },
+    dense: {
+      type: Boolean,
+      default: true,
+    },
+    type: {
+      type: String,
+      default: 'text',
+    },
   },
 })
 </script>
