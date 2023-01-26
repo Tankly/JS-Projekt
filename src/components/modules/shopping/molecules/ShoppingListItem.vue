@@ -2,12 +2,6 @@
   <div class="o-flex o-flex__vertical--center c-shopping-list-item">
     <div class="o-flex o-flex--direction-column o-flex__grow--2">
       <span class="c-body--01">{{ data.name }}</span>
-      <span class="c-footnote--footnote">{{ data.note }}</span>
-    </div>
-    <div>
-      <span class="c-body--01 u-margin__horizontal"
-        >{{ data.price }} {{ data.currencyCode }}</span
-      >
     </div>
     <div>
       <span class="c-body--01 u-margin__horizontal">

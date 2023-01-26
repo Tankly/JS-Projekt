@@ -1,9 +1,6 @@
 <template>
   <Teleport to="#app-bar">
-    <div
-      class="o-flex o-flex--space-between u-width--full o-flex__vertical--center"
-    >
-      <span class="c-large-title--01 u-padding__horizontal">Lists</span>
+    <div class="o-flex o-flex--flex-end u-width--full o-flex__vertical--center">
       <BaseButton
         variant="text"
         to="lists-add"

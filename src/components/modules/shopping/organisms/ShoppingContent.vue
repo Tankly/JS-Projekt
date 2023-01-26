@@ -11,20 +11,17 @@
         @delList="(id) => $emit('delList', id)"
       />
     </div>
-    <div
-      v-else
-      class="o-flex o-flex--center u-height--full"
-    >
-      <span class="c-body--02">No lists</span>
-    </div>
+    <BaseNoData v-else />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import ShoppingList from './ShoppingList.vue'
+import BaseNoData from '@/components/general/atoms/BaseNoData.vue'
 
 export default defineComponent({
+  components: { BaseNoData },
   props: {
     items: {
       type: Array,

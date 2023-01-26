@@ -5,16 +5,15 @@
     >
       <BaseButton
         variant="text"
-        to="/lists"
+        :to="`/lists/${listId}`"
       >
-        <span class="c-body--02">Cancel</span>
+        <span class="c-body--02">Back</span>
       </BaseButton>
       <BaseButton
         variant="text"
-        :loading="loading"
-        @click="$emit('addList')"
+        @click="$emit('save')"
       >
-        <span class="c-body--02">Done</span>
+        <span class="c-body--02">Edit</span>
       </BaseButton>
     </div>
   </Teleport>
@@ -25,14 +24,14 @@ import { defineComponent } from 'vue'
 import BaseButton from '@/components/general/atoms/BaseButton.vue'
 
 export default defineComponent({
-  components: { BaseButton },
+  components: {
+    BaseButton,
+  },
   props: {
-    loading: {
-      type: Boolean,
-      default: false,
+    listId: {
+      type: [Number, String],
+      required: true,
     },
   },
 })
 </script>
-
-<style scoped></style>

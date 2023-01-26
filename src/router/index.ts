@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import lists from '@/views/lists.vue'
 import list from '@/views/list.vue'
-import thrash from '@/views/thrash.vue'
 import settings from '@/views/settings.vue'
 import TheLoginLayoutVue from '@/layouts/TheLoginLayout.vue'
 import walkthrough from '@/views/walkthrough.vue'
@@ -14,6 +13,7 @@ import buildMiddleware from './middlewareBuilder'
 import onVueReady from './onVueReady'
 import authenticationGuard from '@/middleware/authenticationGuard'
 import unauthenticatedCheck from '@/middleware/unauthenticatedCheck'
+import productsEdit from '@/views/products-edit.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -77,20 +77,21 @@ const router = createRouter({
       },
     },
     {
-      path: '/lists-add',
-      name: 'Add list',
-      component: listsAdd,
+      path: '/lists/:id/products-edit',
+      name: 'Edit products',
+      component: productsEdit,
       meta: {
         middleware: authenticationGuard,
         extension: true,
       },
     },
     {
-      path: '/thrash',
-      name: 'Thrash',
-      component: thrash,
+      path: '/lists-add',
+      name: 'Add list',
+      component: listsAdd,
       meta: {
         middleware: authenticationGuard,
+        extension: true,
       },
     },
     {

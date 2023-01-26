@@ -1,17 +1,14 @@
 <template>
   <v-bottom-navigation color="primary">
     <BtnWithBottomText
+      className="u-width--50"
       to="/lists"
       icon="mdi-list-status"
       label="Lists"
     />
     <BtnWithBottomText
-      to="/thrash"
-      icon="mdi-trash-can"
-      label="Thrash"
-    />
-    <BtnWithBottomText
-      to="settings"
+      className="u-width--50"
+      to="/settings"
       icon="mdi-cog"
       label="Settings"
     />

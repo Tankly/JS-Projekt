@@ -1,7 +1,6 @@
 <template>
   <v-main>
     <TheTopNav />
-    <v-navigation-drawer>drawer</v-navigation-drawer>
     <slot v-if="mounted"></slot>
     <TheBottomNav />
   </v-main>

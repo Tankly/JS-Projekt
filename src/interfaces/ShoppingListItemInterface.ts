@@ -1,8 +1,6 @@
-export default interface ShoppingListItem {
-  name: String
+export default interface ShoppingListItemInterface {
+  id: string
+  name: string
   category: string
-  price: Number
-  currencyCode: String
-  quantity: Number
-  note: String
+  quantity: number
 }

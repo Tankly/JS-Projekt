@@ -3,9 +3,12 @@
     <div
       class="o-flex o-flex--space-between u-width--full o-flex__vertical--center"
     >
-      <span class="c-large-title--01 u-padding__horizontal">{{ name }}</span>
-      <BaseButton variant="text">
-        <span class="c-body--02">Add product</span>
+      <span class="c-large-title--02 u-padding__horizontal">{{ name }}</span>
+      <BaseButton
+        variant="text"
+        :to="`${$route.path}/products-edit`"
+      >
+        <span class="c-body--02">Edit products</span>
       </BaseButton>
     </div>
   </Teleport>
