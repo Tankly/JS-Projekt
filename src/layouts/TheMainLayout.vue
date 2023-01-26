@@ -2,7 +2,7 @@
   <v-main>
     <TheTopNav />
     <v-navigation-drawer>drawer</v-navigation-drawer>
-    <slot></slot>
+    <slot v-if="mounted"></slot>
     <TheBottomNav />
   </v-main>
 </template>
@@ -14,5 +14,13 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   components: { TheBottomNav, TheTopNav },
+  data() {
+    return {
+      mounted: false,
+    }
+  },
+  mounted() {
+    this.mounted = true
+  },
 })
 </script>
