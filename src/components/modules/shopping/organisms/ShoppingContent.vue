@@ -21,14 +21,13 @@ import ShoppingList from './ShoppingList.vue'
 import BaseNoData from '@/components/general/atoms/BaseNoData.vue'
 
 export default defineComponent({
-  components: { BaseNoData },
   props: {
     items: {
       type: Array,
       default: () => [],
     },
   },
-  components: { ShoppingList },
+  components: { ShoppingList, BaseNoData },
 })
 </script>
 
