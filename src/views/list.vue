@@ -42,8 +42,8 @@ export default defineComponent({
       }
       return groupedByCategory
     },
-    async getShoppingList(id: String | String[]) {
-      await ShoppingListService.getShoppingListById(id)
+    async getShoppingList(id: string) {
+      ShoppingListService.getShoppingListById(id)
         .then((data: ShoppingListInterface) => {
           this.list = data
           this.productsGroupedByCategory = this.groupByProductsByCategory(data)

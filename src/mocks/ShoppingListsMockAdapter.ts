@@ -1,3 +1,4 @@
+import type ProductSelectorInterface from '@/interfaces/ProductSelectorInterface'
 import BaseMockAdapter from './BaseMockAdapter'
 
 export default class ShoppingListsMockAapter extends BaseMockAdapter {
@@ -8,72 +9,7 @@ export default class ShoppingListsMockAapter extends BaseMockAdapter {
       name: 'For work',
       color: '#047C52',
       icon: 'mdi-heart',
-      items: [
-        {
-          name: 'milk',
-          category: 'Dairy',
-          price: 3.2,
-          currencyCode: 'PLN',
-          quantity: 2,
-          note: '2%',
-        },
-        {
-          name: 'bread',
-          category: 'Bakery',
-          price: 2.3,
-          currencyCode: 'PLN',
-          quantity: 1,
-          note: 'Rye',
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: 'General',
-      color: '#524C8C',
-      icon: 'mdi-gift',
-      items: [
-        {
-          name: 'milk',
-          category: 'Dairy',
-          price: 3.2,
-          currencyCode: 'PLN',
-          quantity: 2,
-          note: '2%',
-        },
-        {
-          name: 'bread',
-          category: 'Bakery',
-          price: 2.3,
-          currencyCode: 'PLN',
-          quantity: 1,
-          note: 'Rye',
-        },
-      ],
-    },
-    {
-      id: 3,
-      name: 'Gym',
-      color: '#FFE200',
-      icon: 'mdi-cart',
-      items: [
-        {
-          name: 'milk',
-          category: 'Dairy',
-          price: 3.2,
-          currencyCode: 'PLN',
-          quantity: 2,
-          note: '2%',
-        },
-        {
-          name: 'bread',
-          category: 'Bakery',
-          price: 2.3,
-          currencyCode: 'PLN',
-          quantity: 1,
-          note: 'Rye',
-        },
-      ],
+      items: [],
     },
   ]
 
@@ -101,6 +37,25 @@ export default class ShoppingListsMockAapter extends BaseMockAdapter {
           return object.id == id
         })
         this.shoppingList.splice(index, 1)
+        return [200]
+      })
+      this.adapter.onPut(`/shopping_lists/${i}/products`).reply((config) => {
+        const data = JSON.parse(config.data)
+        const id = config.url?.split('/').at(-2) || 0
+        const ShoppingListIndex = this.shoppingList.findIndex((object) => {
+          return object.id == id
+        })
+        const items = []
+        for (const productId in data.products as ProductSelectorInterface) {
+          const item = data.products[productId]
+          items.push({
+            quantity: item.quantity,
+            id: productId,
+            name: item.product.name,
+            category: item.product.category,
+          })
+        }
+        this.shoppingList[ShoppingListIndex].items = items
         return [200]
       })
     }

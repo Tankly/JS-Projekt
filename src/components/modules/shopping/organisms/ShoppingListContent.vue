@@ -1,7 +1,7 @@
 <template>
   <div class="u-height--full u-margin__top">
     <div
-      v-if="productsGroupedByCategory"
+      v-if="hasProducts"
       class="c-shopping-list"
     >
       <ShoppingCategoryWithItems
@@ -12,16 +12,12 @@
         color="purple"
       />
     </div>
-    <div
-      v-else
-      class="o-flex o-flex--center u-height--full"
-    >
-      <span class="c-body--02">List empty</span>
-    </div>
+    <BaseNoData v-else />
   </div>
 </template>
 
 <script lang="ts">
+import BaseNoData from '@/components/general/atoms/BaseNoData.vue'
 import { defineComponent } from 'vue'
 import ShoppingCategoryWithItems from './ShoppingCategoryWithItems.vue'
 
@@ -32,7 +28,15 @@ export default defineComponent({
       default: null,
     },
   },
-  components: { ShoppingCategoryWithItems },
+  components: { ShoppingCategoryWithItems, BaseNoData },
+  computed: {
+    hasProducts(): boolean {
+      return !!(
+        this.productsGroupedByCategory &&
+        Object.keys(this.productsGroupedByCategory).length
+      )
+    },
+  },
 })
 </script>
 

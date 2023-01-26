@@ -1,5 +1,8 @@
 <template>
-  <div class="o-flex o-flex__grow--3 o-flex--center">
+  <div
+    :class="className"
+    class="o-flex o-flex--center"
+  >
     <BaseButton
       class="u-width--full"
       v-bind="$attrs"
@@ -19,6 +22,10 @@ export default defineComponent({
     label: {
       type: String,
       required: true,
+    },
+    className: {
+      type: String,
+      default: '',
     },
     icon: {
       type: String,

@@ -1,7 +1,7 @@
 <template>
   <v-app-bar>
     <v-app-bar-title class="o-flex__grow--3">
-      {{ $route.name }}
+      <span class="c-large-title--01">{{ $route.name }}</span>
     </v-app-bar-title>
     <img :src="`${publicPath}img/logo-64x64.png`" />
     <template
