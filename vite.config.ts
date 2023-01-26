@@ -22,9 +22,9 @@ export default defineConfig({
         cleanupOutdatedCaches: true,
       },
       manifest: {
-        name: 'Lista zakupów',
-        short_name: 'Lista zakupów',
-        description: 'Lista zakupów',
+        name: 'Shopping list',
+        short_name: 'Shopping list',
+        description: 'Shopping list',
         start_url: '/',
         icons: [
           {
